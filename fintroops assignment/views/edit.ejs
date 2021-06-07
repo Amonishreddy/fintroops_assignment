@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate')%>
+    <div class=" container row">
+        <h1 class="text-center">Edit Student Data</h1>
+        <div class="col-6 offset-3">
+            <form  action="/Admin/info/<%= studentdatas._id%>?_method=PUT" method="POST" enctype="multipart/form-data" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="name" value="<%=studentdatas.name %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="id">Registration number</label>
+                    <input class="form-control" type="text" id="id" name="studentid" value="<%=studentdatas.studentid %>" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="number">Contact number</label>
+                    <input class="form-control" type="number" id="number" name="number" value="<%=studentdatas.contact %>" required>
+                    
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="Address">Address</label>
+                    <textarea class="form-control" type="text" id="Address" name="address"
+                        required> <%= studentdatas.address %> </textarea>
+                    
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Upload image</label>
+                    <input class="form-control" type="file" id="image" name="image" value= "<% studentdatas.img %>" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
+            <a href="/Admin/info">Cancel</a>
+        </div>
+    </div>
+ 

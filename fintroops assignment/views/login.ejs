@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <title>ID Card Creation</title>
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light rounded" aria-label="Twelfth navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fintroops</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+            <form action="/"> 
+              <div style=margin-right:10px> <button class="btn btn-outline-success me-2" type="submit" >Home</button></div>
+            </form>
+           
+           <form action="/Admin/info" >
+            <div style=margin-right:10px>  <button class="btn  btn-outline-secondary" type="submit"> ADMIN</button></div>
+           </form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class= "container">
+        <%- include('./partials/flash')%>
+    </div>
+    <h1 class="text-center">Admin login</h1>
+    <div class="row">
+       
+        <div class="col-4 offset-3">
+            <form action="/login" method="POST"  novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="username">Enter UserName:</label>
+                    <input class="form-control" type="text" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">Enter Password:</label>
+                    <input class="form-control" type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="mb-3">
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
+            <a href="/">Cancel</a>
+        </div>
+    </div>
+ 
+    <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.validated-form')
+
+            // Loop over them and prevent submission
+            Array.from(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+     crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+     crossorigin="anonymous"></script>
+    <footer class="footer bg-dark py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">&copy; Fintroops project</span>
+        </div>
+    </footer>
+</body>
+
+</html>
