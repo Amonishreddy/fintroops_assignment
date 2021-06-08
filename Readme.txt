@@ -11,7 +11,7 @@ Operations with can be performed on this application:
 For Student:
 1- Add Student data
 
-For Admin:
+For Admin:(username: admin ; password: admin)
 1- Add Student data
 2- view All student data
 3- Update student data
