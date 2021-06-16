@@ -17,7 +17,7 @@ const requireLogin = (req, res, next) => {
     }
     next();
 }
-const uri = 'mongodb://localhost:27017/yelp-camp';
+const uri = 'mongodb://localhost:27017/idcarddata';
 const connectionParams={
     useNewUrlParser: true,
     useCreateIndex: true,
