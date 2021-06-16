@@ -17,7 +17,7 @@ const requireLogin = (req, res, next) => {
     }
     next();
 }
-const uri = "mongodb+srv://monishreddy:monishreddy@fintroops.q9nre.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = 'mongodb://localhost:27017/yelp-camp';
 const connectionParams={
     useNewUrlParser: true,
     useCreateIndex: true,
